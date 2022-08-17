@@ -1,0 +1,27 @@
+
+@media screen and (max-width: 1024px){
+    .small--hide,
+    div#shopify-section-custom-header {
+        display: none !important;
+    }
+    .site-header__menu,
+    .mobile-nav-wrapper.js-menu--is-open{
+        display: block !important;
+    }
+    .site-header__mobile-nav {
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        width: 100%;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        -moz-align-items: center;
+        -ms-align-items: center;
+        -o-align-items: center;
+        align-items: center;
+    }
+    header.site-header.border-bottom.logo--left .grid__item {
+        padding-left: 0px!important;
+        width: 100% !important;
+    }
+}

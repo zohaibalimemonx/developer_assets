@@ -1,0 +1,8 @@
+@font-face {
+    font-family: 'Rhesmanisa';
+    src: url('fonts/Rhesmanisa-Regular.eot');
+    src: url('fonts/Rhesmanisa-Regular.eot?#iefix') format('embedded-opentype'), url('fonts/Rhesmanisa-Regular.woff2') format('woff2'), url('fonts/Rhesmanisa-Regular.woff') format('woff'), url('fonts/Rhesmanisa-Regular.ttf') format('truetype'), url('fonts/Rhesmanisa-Regular.svg#Rhesmanisa-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}

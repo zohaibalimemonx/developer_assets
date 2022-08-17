@@ -1,0 +1,17 @@
+******** ******** ********
+O W L - C A R O U S E L
+******** ******** ********
+<link rel="stylesheet" href="https://owlcarousel2.github.io/OwlCarousel2/assets/owlcarousel/assets/owl.carousel.min.css">
+<link rel="stylesheet" href="https://owlcarousel2.github.io/OwlCarousel2/assets/owlcarousel/assets/owl.theme.default.min.css">
+<script src="https://owlcarousel2.github.io/OwlCarousel2/assets/owlcarousel/owl.carousel.js"></script>
+
+******** ******** ******** ******** ******** ********
+S M O O T H - S C O L L B A R - L I B R A R Y J S
+******** ******** ******** ******** ******** ********
+https://github.com/min30327/luxy.js (Downloaded - 20/10/2021) - (File May Be On Personal Computer/Office)
+
+
+******** ******** ******** ******** ******** ********
+F U L L - P A G E - L I B R A R Y - J S (FREE VERSION)
+******** ******** ******** ******** ******** ********
+https://github.com/alvarotrigo/fullPage.js/tree/2.9.7

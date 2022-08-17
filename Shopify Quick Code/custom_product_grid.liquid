@@ -1,0 +1,55 @@
+<div class="row product-grid-container">
+    {% for product in collections.bubble-kits.products limit: 3 %}
+    <div class="product-card col-lg-4 col-md-6 col-sm-12">
+        <div class="product-self">
+            {%- assign preview_image = product.featured_media.preview_image -%}
+            <div class="product-image">
+                <a href="{{ product.url | within: collection }}">
+                    {% comment %} <img class="grid-view-item__image lazyload"
+                        data-src="{{ preview_image | img_url: 300x300, scale: 3 }}" alt="{{ preview_image.alt }}"> {%
+                    endcomment %}
+                    <img class="lazyload" data-src="{{ product.featured_image | product_img_url: '300x300' }}"
+                        alt="{{ product.featured_image.alt }}">
+                </a>
+                <div class="btn-wrap">
+                    <form action="/cart/add" method="post">
+                        {% if product.variants.size == 1 %}
+                        <input type="hidden" name="id" value="{{ product.variants.first.id }}" />
+                        <div>
+                            <button type="submit" name="add" class="product-btn"><img
+                                    src="https://cdn.shopify.com/s/files/1/0512/2156/1516/files/carbon_shopping-cart-plus.svg?v=1614193378"></button>
+                        </div>
+                        {% else %}
+                        <div>
+                            <a href="{{ product.url | within: collection }}" class="product-btn"><img
+                                    src="https://cdn.shopify.com/s/files/1/0512/2156/1516/files/carbon_shopping-cart-plus.svg?v=1614193378"></a>
+                        </div>
+                        {% endif %}
+                    </form>
+                </div>
+            </div>
+            <div class="product-content">
+                <div class="content-wrap">
+                    <h4 class="product-title">
+                        <a href="{{ product.url | within: collection }}">{{
+                            product.title}}</a>
+                    </h4>
+                    <div class="product-ratings">
+                        <img class="lazyload"
+                            data-src="https://cdn.shopify.com/s/files/1/0285/5387/1496/files/product-ratings_1.png?v=1617721995">
+                    </div>
+                    {% include 'product-price-listing', product: product %}
+                </div>
+            </div>
+            <div class="btn-wrap">
+                <form method="post" action="/cart/add" class="addCart">
+                    <input type="hidden" name="id" value="{{ product.variants.first.id }}" />
+                    <input style="display: none;" type="hidden" min="1" type="number" id="quantity" name="quantity"
+                        value="1" />
+                    <input type="submit" value="Add to cart" class="btn" />
+                </form>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>

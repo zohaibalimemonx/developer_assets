@@ -1,0 +1,34 @@
+/* Carousal Nav Static (.main-homepage-slider) <<< Unique Reference */
+
+.main-homepage-slider div.woodmart-slider-wrapper,
+.main-homepage-slider div.woodmart-slider-wrapper .owl-carousel.woodmart-slider {
+    overflow: visible;
+}
+
+.main-homepage-slider .owl-carousel .owl-nav>div {
+    transform: translateY(0)!important;
+    -webkit-transform: translateY(0)!important;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: visible;
+    position: static!important;
+}
+
+.main-homepage-slider .owl-nav {
+    position: absolute;
+    text-align: center;
+    bottom: -50px;
+    left: 50%;
+    transform: translatex(-50%);
+}
+
+.main-homepage-slider .owl-prev,
+.main-homepage-slider .owl-next {
+    height: 45px;
+    background-color: rgba(0, 74, 141, 1);
+}
+
+.main-homepage-slider .owl-prev:hover,
+.main-homepage-slider .owl-next:hover {
+    background-color: rgba(114, 154, 191, 1);
+}

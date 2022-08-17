@@ -1,0 +1,565 @@
+/*
+Theme Name: salient Child
+Theme URI:  https://www.eseospace.com/
+Author:     eSeospace Developer
+Author URI: https://www.eseospace.com/
+Template:   salient
+Version:    1.0
+License:    GNU General Public License v2 or later
+*/
+
+/* Backend System Styling */
+.login-form-wrapper .row,
+.register-form-wrapper > .container > .row{
+    background-color: #FFFFFF !important;
+    border: 1px solid #DFDFDF !important;
+    padding: 6% !important;
+}
+.form-title {
+    text-align: center;
+}
+.form-title > h3 {
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 34px;
+    color: #636569;
+}
+.form-title {
+    text-align: center;
+    margin-bottom: 30px;
+}
+.cs-field {
+    background-color: rgba(0,0,0,0.04) !important;
+    border-radius: 4px !important;
+    border: 2px solid rgba(0,0,0,0) !important;
+    color: #000 !important;
+    box-shadow: none !important;
+    
+}
+.cs-field::placeholder {
+    color: #CACACA;
+}
+.cs-field:focus{
+    border-color: #3cb1c8 !important;
+}
+.login-form-inner{
+    max-width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.register-form-inner{
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.row.register-row > div:not(:last-child) {
+    margin-bottom: 10px !important;
+}
+.row.register-row > div {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.forgot-pass {
+    text-align: right;
+}
+.forgot-pass > a {
+    font-family: 'Raleway';
+    font-style: italic;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 20px;
+    color: #3CB1C8;
+}
+.form-wrapper > form > div:not(:last-child) {
+    margin-bottom: 10px;
+}
+.custom-submit-btn {
+    text-align: center;
+}
+.submit-btn, 
+.register-btn {
+    font-family: 'Raleway' !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+    font-size: 16px !important;
+    text-align: center !important;
+    outline: none !important;
+    border: none !important;
+    padding: 10px !important;
+    border-bottom: 4px !important;
+    min-width: 100px;
+    min-height: 50px;
+    display: inline-block;
+    cursor: pointer;
+}
+.submit-btn{
+    background-color: #3CB1C8 !important;
+    color: #fff !important;
+}
+.register-btn{
+    background-color: #DDDDDD !important;
+    color: #444444 !important;
+}
+.register-btn:hover{
+    background-color: #3CB1C8 !important;
+    color: #fff !important;
+}
+.error {
+    font-size: 14px !important;
+    color: red !important;
+}
+.login-form-wrapper, 
+.register-form-wrapper {
+    margin-bottom: 5%;
+    margin-top: 5%;
+}
+.custom-submit-btn > button:not(:last-child) {
+    margin-right: 10px;
+}
+.events-page-title {
+    background-image: url(https://eseospace.dev/websites/behavioralfitnesstoday/wp-content/uploads/2022/05/Event-Banner.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding-top: 10%;
+    padding-bottom: 10%;
+}
+.events-page-title .entry-content h1 {
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 48px;
+    letter-spacing: 1px;
+    color: #FFFFFF;
+}
+.events-intro-title {
+    margin-bottom: 25px;
+}
+.events-intro-title > h3 {
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 34px;
+    text-align: center;
+    color: #636569;
+    margin-bottom: 0 !important;
+}
+.signup-events-wrapper {
+    padding-top: 35px;
+    padding-bottom: 35px;
+}
+.event-product-feature > a > img {
+    max-width: 100%;
+    width: 100%;
+    height: 330px;
+    object-fit: cover;
+    object-position: center;
+    transform: scale(1.0);
+    transition: .3s all ease-in-out;
+}
+.event-product-card:hover img {
+    transform: scale(1.1);
+}
+.event-product-feature {
+    overflow: hidden;
+    max-width: 100%;
+    height: 330px;
+}
+.event-product-feature > a {
+    display: block;
+}
+.p-event-date {
+    line-height: 100%;
+    margin-bottom: 10px;
+}
+.p-event-date span {
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: capitalize;
+    color: #333333;
+}
+.p-event-title > h3 {
+    margin-bottom: 0 !important;
+}
+.p-event-title > h3 > a {
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    text-transform: uppercase;
+    color: #3CB1C8;
+    display: block;
+    line-height: 145%;
+}
+.p-event-title {
+    margin-bottom: 15px;
+}
+.p-event-content > p {
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    color: #333333;
+    padding-bottom: 0 !important;
+}
+
+.signup-action > a {
+    display: inline-flex;
+    background-color: #3CB1C8;
+    border-radius: 4px;
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    text-align: center;
+    color: #FFFFFF;
+    min-width: 90px;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    transition: .2s ease-out;
+}
+.signup-action > a:hover {
+    background-color: #333;
+}
+.signup-action > span {
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    text-transform: capitalize;
+    color: #333333;
+    vertical-align: middle;
+    margin-left: 10px;
+}
+.custom-paging-row ul.page-numbers > li {
+    list-style-type: none !important;
+}
+.custom-paging-row ul.page-numbers {
+    margin: 0 !important;
+    list-style-type: none !important;
+    text-align: center
+}
+.row.custom-paging-row {
+    margin: 0 0 35px 0!important
+}
+.custom-paging-row ul.page-numbers > li {
+    display: inline!important;
+}
+.custom-paging-row ul.page-numbers>li a,
+.custom-paging-row ul.page-numbers>li span {
+    font-size: 16px!important;
+    display: inline-block!important;
+    box-sizing: content-box!important;
+    padding-right: 5px!important;
+    padding-left: 5px!important;
+    min-width: 22px!important;
+    height: 34px!important;
+    color: #333333;
+    line-height: 34px;
+    transition: all .2s ease;
+    text-align: center;
+}
+.custom-paging-row ul.page-numbers > li .current,
+.custom-paging-row ul.page-numbers > li a:hover{
+    background-color: #3CB1C8 !important;
+    color: #fff !important;
+}
+.custom-paging-row .woocommerce-pagination {
+    padding-bottom: 0 !important;
+}
+.event-product-card {
+    position: relative;
+    border: 1px solid #D7D7D7;
+    height: 100%;
+}
+.p-event-card-top {
+    padding: 20px 20px 20px 20px;
+}
+.signup-action {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+}
+.woocommerce-checkout div#customer_details > div:first-child {
+    max-width: 60% !important;
+    width: 100% !important;
+}
+.woocommerce-checkout div#customer_details > div:last-child {
+    max-width: 40% !important;
+    width: 100% !important;
+}
+.row.event-product-grid > div {
+    margin-bottom: 20px;
+}
+.single-product div.product .woocommerce-tabs .full-width-content[data-tab-style="fullwidth"] ul.tabs {
+    margin: 25px 0 25px 0 !important;
+    text-align: left !important;
+}
+.single-product .woocommerce-tabs .full-width-content.first-section,
+.single-product .nectar-social,
+.single-product .quantity.buttons_added,
+.single-product nav.woocommerce-breadcrumb{
+    display: none !important;
+}
+.single-product form.cart {
+    margin-bottom: 20px !important;
+}
+.single-product button.single_add_to_cart_button {
+    margin-top: 0 !important;
+}
+.single-product .summary.entry-summary {
+    padding-left: 20px !important;
+}
+.single-product .woocommerce-notices-wrapper {
+    max-width: 100%;
+    width: 100%;
+}
+section.account-info-section {
+    margin-bottom: 5%;
+    margin-top: 5%;
+}
+.row.myaccount-row {
+    border: 1px solid #DFDFDF;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding: 35px;
+    margin-bottom: 35px;
+}
+.account-info-title > h3 {
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    text-align: center;
+    color: #636569;
+    margin-bottom: 0 !important;
+}
+.account-info-title {
+    margin-bottom: 35px;
+}
+.account-detail > p {
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    text-transform: uppercase;
+    color: #3CB1C8;
+    padding-bottom: 0 !important;
+    margin-bottom: 5px !important;
+}
+.logout-wrapper > a {
+    color: #000 !important;
+}
+.logout-wrapper {
+    padding-bottom: 0 !important;
+    text-align: right;
+    margin-bottom: 5px;
+}
+.account-info-wrapper > div.row > div {
+    margin-bottom: 35px;
+}
+.quantity.hidden.buttons_added {
+    display: none;
+}
+.event-product-action-wrapper {
+    margin-top: 30px;
+}
+.event-product-action-wrapper .variations_form td.label label{
+    font-family: 'Raleway' !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+    font-size: 16px !important;
+    color: #333333 !important;
+    line-height: 140% !important;
+    margin-bottom: 5px !important;
+    display: block !important;
+    text-align: center !important;
+}
+.event-product-action-wrapper .variations_form a.reset_variations {
+    font-size: 14px !important;
+}
+.event-product-action-wrapper .variations_form table.variations > tbody > tr {
+    display: flex !important;
+    flex-direction: column !important;
+    flex-wrap: wrap !important;
+}
+.event-product-action-wrapper .variations_form table.variations {
+    max-width: 100% !important;
+    width: 100% !important;
+}
+.event-product-action-wrapper .variations_form .woocommerce-variation-price > span {
+    font-weight: 600 !important;
+    font-size: 14px !important;
+}
+.event-product-action-wrapper .variations_form table.variations {
+    margin-bottom: 10px !important;
+}
+.event-product-action-wrapper .variations_form table.variations button.single_add_to_cart_button {
+    text-transform: uppercase;
+    font-size: 16px !important;
+    padding: 13px 25px!important;
+}
+.event-product-action-wrapper .variations_form .woocommerce-variation-add-to-cart {
+    text-align: center !important;
+}
+.event-product-action-wrapper .variations_form .woocommerce-variation-price {
+    text-align: center !important;
+}
+.row.myaccount-events-row {
+    border: 1px solid #DFDFDF;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding: 35px !important;
+}
+.custom-tab-btn {
+    font-family: 'Raleway' !important;
+    font-style: normal !important;
+    font-weight: 700 !important;
+    font-size: 16px !important;
+    text-transform: uppercase !important;
+    outline: none !important;
+    border: none !important;
+    background-color: transparent !important;
+    cursor: pointer;
+}
+.custom-tab-btn:hover,
+.tab-active{
+    color: #3CB1C8 !important;
+}
+.events-tabs-wrapper > .table td {
+    text-align: center !important;
+}
+.events-tabs-wrapper > .table {
+    max-width: 35% !important;
+    width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-bottom: 35px !important;
+}
+.event-card-feature > img {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+}
+.event-card-date {
+    font-family: 'Raleway' !important;
+    font-style: normal !important;
+    font-weight: 700 !important;
+    font-size: 14px !important;
+    text-transform: uppercase !important;
+    color: #333333 !important;
+    padding-bottom: 0 !important;
+    margin-bottom: 15px;
+}
+.event-card-title {
+    font-family: 'Raleway' !important;
+    font-style: normal !important;
+    font-weight: 700 !important;
+    font-size: 18px !important;
+    text-transform: uppercase !important;
+    color: #3CB1C8 !important;
+    margin-bottom: 25px;
+    line-height: 140%;
+}
+.event-card-action > a {
+    background-color: #DDDDDD !important;
+    border-radius: 4px !important;
+    font-family: 'Raleway' !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+    font-size: 14px !important;
+    color: #444444;
+    padding: 12px 20px !important;
+    display: inline-block;
+}
+.event-card-action > a:hover{
+    background-color: #3CB1C8 !important;
+    color: #fff !important;
+}
+a.sign-up-link {
+    font-family: 'Raleway' !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+    font-size: 16px !important;
+    text-align: center !important;
+    outline: none !important;
+    border: none !important;
+    padding: 10px !important;
+    border-bottom: 4px !important;
+    min-width: 100px;
+    min-height: 50px;
+    display: inline-block;
+    cursor: pointer;
+    background-color: #3cb1c8 !important;
+    color: #fff !important;
+    border-radius: 4px !important;
+}
+
+
+
+
+/* RESPONSIVE */
+
+@media screen and (min-width: 1025px){
+    .account-info-wrapper {
+        max-width: 60%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+@media screen and (max-width: 1024px){
+    .event-product-feature > a > img {
+        height: 220px;
+    }
+    .event-product-feature {
+        height: 220px;
+    }
+    .p-event-title > h3 > a {
+        font-size: 16px;
+    }
+    .row.event-product-grid > div {
+        padding-left: 7px;
+        padding-right: 7px;
+    }
+}
+@media screen and (max-width: 768px){
+    .login-form-inner {
+        max-width: 90%;
+    }
+}
+@media screen and (max-width: 767px){
+    .form-title > h3 {
+        font-size: 28px;
+    }
+    .events-intro-title > h3,
+    .events-page-title .entry-content h1{
+        font-size: 26px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

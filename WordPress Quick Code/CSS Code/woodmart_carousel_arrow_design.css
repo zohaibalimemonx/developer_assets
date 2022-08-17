@@ -1,0 +1,39 @@
+.owl-nav {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    border: 3px solid #0C4C8A;
+    width: max-content;
+}
+
+.owl-nav>div {
+    position: static;
+    opacity: 1;
+    transform: none;
+    visibility: visible;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 40px;
+    margin-top: -1px !important;
+    margin-bottom: -1px !important;
+    margin-left: -1px !important;
+    margin-right: -1px !important;
+    transform: translateX(0)!important;
+}
+
+.owl-nav>div::after {
+    color: white;
+    font-size: 16px;
+    color: #0C4C8A;
+}
+
+.owl-nav>div:hover {
+    background: #0C4C8A;
+}
+
+.owl-nav>div:hover::after {
+    color: #fff;
+}

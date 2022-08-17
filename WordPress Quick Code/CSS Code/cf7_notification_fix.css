@@ -1,0 +1,34 @@
+.dokan-alert-danger,
+.dokan-alert-info,
+.dokan-alert-warning,
+.dokan-error,
+.dokan-info,
+.mc4wp-error,
+.mc4wp-notice,
+.woocommerce-error,
+.woocommerce-info,
+.wpcf7 form.aborted .wpcf7-response-output,
+.wpcf7 form.failed .wpcf7-response-output,
+.wpcf7 form.invalid .wpcf7-response-output,
+.wpcf7 form.spam .wpcf7-response-output,
+.wpcf7 form.unaccepted .wpcf7-response-output,
+div.wpcf7-mail-sent-ng,
+div.wpcf7-validation-errors {
+    background-color: #E0B252
+}
+
+.dokan-alert-success,
+.dokan-message,
+.dokan-store-contact .alert-success,
+.mc4wp-success,
+.woocommerce-message,
+.wpcf7 form.sent .wpcf7-response-output,
+.wpcf7-mail-sent-ok,
+.yith_ywraq_add_item_product_message {
+    background-color: #459647;
+    color: white
+}
+
+.wpcf7 form.init .wpcf7-response-output {
+    display: none
+}

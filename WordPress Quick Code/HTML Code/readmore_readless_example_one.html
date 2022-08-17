@@ -1,0 +1,41 @@
+<div class="faq-container">
+    <div class="faq-icon">
+        <img src="#">
+    </div>
+    <div class="faq-content">
+        <h2>Are they all gray?</h2>
+        <div class="faq-txt">
+            No, though the majority of the British Shorthairs bred in the US are gray. Gray is what we call blue. Half
+            of all British Shorthairs bred in CFA
+            <div class="span readmore-text">
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer
+                took a galley of type and scrambled it to make a type specimen book. It has survived not only five
+                centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was
+                popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more
+                recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
+        </div>
+        <div class="button-wrapper">
+            <button class="see-more">Read More</button>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+
+    jQuery('.see-more').on('click', function (e) {
+        e.preventDefault();
+        jQuery(this).closest('.button-wrapper').prev().find('.readmore-text').toggle();
+        jQuery(this).closest('.button-wrapper').find('.see-more').text('Read Less');
+
+        var y = jQuery(this).closest('.button-wrapper').find('.see-more');
+        var x = jQuery(this).closest('.button-wrapper').prev().find('.readmore-text');
+
+        if (x.css('display').toLowerCase() == 'block') {
+            y.text('Read Less');
+        }
+        else {
+            y.text('Read More');
+        }
+    });
+</script>

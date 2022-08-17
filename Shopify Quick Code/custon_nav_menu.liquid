@@ -1,0 +1,50 @@
+<!-- RECOMMENDED FOR HEADER MENU (Main Menu / Sub Menu / Sub Submenu) -->
+<ul class="custom-menu">
+    {% for link in linklists.NAV_MENU_NAME.links %}
+    <li class="custom-menu-link">
+        <a href="{{ link.url }}">{{ link.title }}</a>
+
+        {% if link.links.size > 0 %}
+        <ul class="custom-menu custom-dropdown-child">
+            {% for child_link in link.links %}
+            <li class="custom-menu-link">
+                <a href="{{ child_link.url }}">{{ child_link.title }}</a>
+
+                {% if child_link.links.size > 0 %}
+                <ul class="custom-menu custom-dropdown-grandchild">
+                    {% for grandchild_link in child_link.links %}
+                    <li class="custom-menu-link">
+                        <a href="{{ grandchild_link.url }}">{{ grandchild_link.title }}</a>
+                    </li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+            </li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    </li>
+    {% endfor %}
+</ul>
+
+<!-- RECOMMENDED FOR FOOTER MENU -->
+<ul class="custom-menu">
+    {% for link in linklists.NAV_MENU_NAME.links %}
+    <li>
+        <a href="{{ link.url }}">{{ link.title }}</a>
+    </li>
+    {% endfor %}
+</ul>
+
+<script type="text/javascript">
+    $(function () {
+        var current = location.pathname;
+        $('ul.custom-menu li a').each(function () {
+            var $this = $(this);
+            // if the current path is like this link, make it active
+            if ($this.attr('href') == current) {
+                $this.addClass('active');
+            }
+        })
+    });
+</script>

@@ -1,0 +1,19 @@
+.row.custom-paging-row {
+    margin: 35px 0!important;
+}
+.custom-paging-row ul.page-numbers > li {
+    display: inline!important;
+}
+.custom-paging-row ul.page-numbers>li a,
+.custom-paging-row ul.page-numbers>li span {
+    font-size: 16px!important;
+    display: inline-block!important;
+    box-sizing: content-box!important;
+    padding-right: 5px!important;
+    padding-left: 5px!important;
+    min-width: 22px!important;
+    height: 34px!important;
+    color: #2d2a2a;
+    line-height: 34px;
+    transition: all .2s ease;
+}

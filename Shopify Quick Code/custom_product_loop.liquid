@@ -1,0 +1,43 @@
+<!--  ***** PRODUCTS LOOP CODE ***** -->
+
+
+{% for product in collections.COLLECTION_NAME.products limit: 8 %} <!-- LOOP STARTS -->
+
+<!-- PRODUCT "FEATURED IMAGE" URL FOR(src) -->
+{{ product.featured_image | product_img_url: 'medium' }}
+<!-- PRODUCT IMAGE OTHER THAN "FEATURED IMAGE" URL FOR(src) -->
+{{ product.images[1]| product_img_url: 'medium' }}
+<!-- i.e. -->
+<a href="{{ product.url | within: collection }}">
+    <img src="{{ product.featured_image | product_img_url: 'large' }}" alt="{{ product.featured_image.alt }}">
+</a>
+
+<!-- PRODUCT TITLE -->
+{{ product.title | escape }}
+
+<!-- PRODUCT PERMALINK -->
+{{ product.url }}
+
+<!-- PRODUCT EXCERPT -->
+{{ product.description | strip_html | truncate: 80 }}
+
+<!-- PRODUCT PRICE -->
+{% include 'product-price-listing', product: product %}
+
+<!-- PRODUCT ADD TO CART -->
+<form action="/cart/add" method="post">
+    {% if product.variants.size == 1 %}
+    <input type="hidden" name="id" value="{{ product.variants.first.id }}" />
+    <div class="add-to-cart-wrapper">
+        <button type="submit" name="add" class="palm-add-to-cart">
+            Add To Cart
+        </button>
+    </div>
+    {% else %}
+    <div class="add-to-cart-wrapper">
+        <a href="{{ product.url | within: collection }}" class="palm-add-to-cart">Show Details</a>
+    </div>
+    {% endif %}
+</form>
+
+{% endfor %} <!-- LOOP ENDS -->
