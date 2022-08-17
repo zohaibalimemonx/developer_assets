@@ -1,4 +1,9 @@
-<?php 
+<?php
+
+/**
+ *  Create New Order With PHP
+ */
+
 $address = array(
     'first_name' => '',
     'last_name'  => '',
@@ -23,3 +28,31 @@ $order->calculate_totals();
 
 // FOR ORDER ID
 $order->get_id();
+
+?>
+
+
+
+
+
+
+
+
+<?php 
+
+/**
+ *  Auto Complete all WooCommerce orders.
+ */
+
+add_action( 'woocommerce_thankyou', 'do_auto_complete_woo_order' );
+function do_auto_complete_woo_order( $order_id ) { 
+    if ( ! $order_id )
+    {
+        return;
+    }
+
+    $order = wc_get_order( $order_id );
+    $order->update_status( 'completed' );
+}
+
+?>

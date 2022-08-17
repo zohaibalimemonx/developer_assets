@@ -32,21 +32,11 @@ remove_action('woocommerce_single_product_summary', 'woocommerce_template_single
 
 ?>
 
-<?php
+<?php 
 
 /* * * * * GET PRODUCT PRICE BY ID * * * * */
 
-// IDs
-$id_one = 242;
-$id_two = 243;
-
-// Load Full Product Object By ID
-$product_one = wc_get_product( $id_one );
-$product_two = wc_get_product( $id_two );
-
-// Calling Price Function
-echo $product_one->get_price();
-echo $product_two->get_price();
+$product = wc_get_product( $id );
 
 /**
  *
@@ -208,35 +198,17 @@ $product->get_post_data(); // Get the product's post data.
 $product->get_post_password(); // Get post password.
 $product->get_purchase_note(); // Get purchase note.
 
-?>
-
-<?php
-
-/* * * * * GET EXTERNAL PRODUCT's EXTERNAL URL BY ID * * * * */
-
-    // Load Full Product Object By ID
-    $aff_product_meta = wc_get_product(get_the_ID());
-
-    if( $aff_product_meta->is_type( 'external' ) ):
-        echo $aff_product_meta->get_product_url();
-    endif;
-
-    // BUTTON TEXT
-    $aff_product_meta->button_text;
-?>
-
-
-<?php 
 /**
- * Auto Complete all WooCommerce orders.
+ *
+ *  Get External Product's External URL + Button Text
+ *
  */
-add_action( 'woocommerce_thankyou', 'custom_behavioralfitnesstoday_auto_complete_order' );
-function custom_behavioralfitnesstoday_auto_complete_order( $order_id ) { 
-    if ( ! $order_id ) {
-        return;
-    }
 
-    $order = wc_get_order( $order_id );
-    $order->update_status( 'completed' );
+if( $product->is_type( 'external' ) )
+{
+    echo $product->get_product_url();
+    echo $product->button_text;
 }
+
+
 ?>
