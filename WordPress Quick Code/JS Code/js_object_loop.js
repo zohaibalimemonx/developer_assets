@@ -14,3 +14,10 @@ jQuery.each(cs_object.projects, function(index, val) {
 	}
      i++;
 });
+
+
+// Parse JSON Data From HTML Attributes i.e. data-json=" {JSON} "
+var data_json = jQuery(this).data('json');
+var post_OBJ = JSON.parse(JSON.stringify(data_json));
+
+console.log(post_OBJ.title);
