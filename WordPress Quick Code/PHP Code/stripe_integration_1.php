@@ -1,8 +1,9 @@
 <?php
 
+// Stripe Functions
 function stripe_payment_gateway($form = array(), $subscription= true){ /* > > > If subscription or not (true or false) < < < */
 	global $stripe_private_key;
-	\Stripe\Stripe::setApiKey('sk_test_f7X4uqu0ywoxoOhokzpCfYD80053aeVkDO'); /* > > > Secret Key < < < */
+	\Stripe\Stripe::setApiKey('sk_test_midHtwu7xhc9SKaY3fwfuVSw'); /* > > > Secret Key < < < */
 	if ($subscription) {
 		try {
 			$customer = \Stripe\Customer::create(array(
@@ -59,13 +60,14 @@ function stripe_payment_gateway($form = array(), $subscription= true){ /* > > > 
 
 		try {
 			$customer = \Stripe\Customer::create(array(
+			    'name' => $form['name'],
 				'email' => $form['email'],
 				'card'  => $form['stripeToken'],
 			));
 			$charge = \Stripe\Charge::create([
 				'customer' => $customer->id,
 				'amount'   => round($form['amount'] * 100),//amount shuld be in cent...
-				'currency' => 'EUR',
+				'currency' => 'USD',
 			]);
 			$err['stripe_charge'] = $charge['id'];
 			$err['status']  = true;
@@ -114,7 +116,7 @@ function stripe_payment_gateway($form = array(), $subscription= true){ /* > > > 
 
 function generate_token($formata = array()){
 	global $stripe_private_key;
-	\Stripe\Stripe::setApiKey('sk_test_f7X4uqu0ywoxoOhokzpCfYD80053aeVkDO'); /* > > > Secret Key < < < */
+	\Stripe\Stripe::setApiKey('sk_test_midHtwu7xhc9SKaY3fwfuVSw'); /* > > > Secret Key < < < */
 	try {
 		$response = \Stripe\Token::create([
 			'card' => [

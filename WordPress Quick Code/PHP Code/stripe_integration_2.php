@@ -23,6 +23,7 @@ if( !$response1['status'] )
 /* > > > RESPONSE 2 < < < */
 
 $data2 = array(
+    'name'  => $_POST['name'],
     'email' => $_POST['email'],
     'stripeToken' => $response1['token'],
     'amount' => 25
