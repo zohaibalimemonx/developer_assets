@@ -2,6 +2,7 @@
 
 /**
  *  Create New Order With PHP
+ *  REF: https://github.com/woocommerce/woocommerce/blob/4.9.0/includes/class-wc-order.php#L317-L350
  */
 
 $address = array(

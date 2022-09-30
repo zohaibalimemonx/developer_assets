@@ -5,6 +5,10 @@ O W L - C A R O U S E L
 <link rel="stylesheet" href="https://owlcarousel2.github.io/OwlCarousel2/assets/owlcarousel/assets/owl.theme.default.min.css">
 <script src="https://owlcarousel2.github.io/OwlCarousel2/assets/owlcarousel/owl.carousel.js"></script>
 
+wp_enqueue_style('owl-carousel-min-css', 'https://owlcarousel2.github.io/OwlCarousel2/assets/owlcarousel/assets/owl.carousel.min.css', array(), '2.3.4', 'all' );
+wp_enqueue_style('owl-theme-default-min-css', 'https://owlcarousel2.github.io/OwlCarousel2/assets/owlcarousel/assets/owl.theme.default.min.css', array(), '2.3.4', 'all' );
+wp_enqueue_script('owl-carousel-js', 'https://owlcarousel2.github.io/OwlCarousel2/assets/owlcarousel/owl.carousel.js', array(), '2.3.4', true );
+
 ******** ******** ******** ******** ******** ********
 S M O O T H - S C O L L B A R - L I B R A R Y J S
 ******** ******** ******** ******** ******** ********

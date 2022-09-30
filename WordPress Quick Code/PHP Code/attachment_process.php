@@ -27,6 +27,11 @@ if(!function_exists('insert_attachment')) {
 $attach_id = insert_attachment('NAME_OF_FILE',  $POST_ID);
 
 /*
+*   GET ATTACHMENT FILE
+*/
+$attach_file = get_attached_file($attach_id);
+
+/*
 *   GET ATTACHMENT URL BY ID
 */
 $attach_url = wp_get_attachment_url( $attach_id );
