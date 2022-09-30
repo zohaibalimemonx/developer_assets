@@ -30,6 +30,11 @@ jQuery(document).ready(function(e){
             {
         		jQuery.LoadingOverlay("hide");
         		jQuery("#ajax-content").html(value.html);
+				Swal.fire({
+                    icon: 'success',
+                    title: 'Thank You',
+                    text: 'Form has been submitted Successfully!'
+                });
             }
             else
             {
