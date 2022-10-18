@@ -1,5 +1,5 @@
 <?php
-
+include_once 'stripe/autoload.php';
 // Stripe Functions
 function stripe_payment_gateway($form = array(), $subscription= true){ /* > > > If subscription or not (true or false) < < < */
 	global $stripe_private_key;

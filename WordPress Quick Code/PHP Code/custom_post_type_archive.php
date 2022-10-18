@@ -49,14 +49,25 @@ add_action( 'pre_get_posts', 'custom_posts_per_page' );
     *   The Code Below Will Modify the Main WordPress Loop, Before the Queries Fired.
     *   Set Query Attributes For Certain Fired WP_Query() - Generaly Use On Archive Page
     */
-    function industry_archive_posts_order($query)
+    function events_archive_posts_order($query)
+{
+    if( !is_admin() && $query->is_post_type_archive('events') && $query->is_main_query() )
     {
-        if( !is_admin() && $query->is_post_type_archive('POST_TYPE') && $query->is_main_query() )
-        {
-            $query->set( 'orderby', 'menu_order' );
-            $query->set( 'order', 'ASC' );
-        }
+        $today = date('Ymd');
+        $query->set( 'orderby', 'meta_value_num' );
+        $query->set( 'order', 'ASC' );
+        $query->set( 'meta_key', 'event_date' );
+        $query->set( 'meta_query', array(
+                array(
+                    'key' => 'event_date',
+                    'value' => $today,
+                    'type' => 'numeric',
+                    'compare' => '>='
+                )
+            )
+        );
     }
-    add_action( 'pre_get_posts', 'industry_archive_posts_order' );
+}
+add_action( 'pre_get_posts', 'events_archive_posts_order' );
 
 ?>

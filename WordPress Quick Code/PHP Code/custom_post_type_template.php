@@ -92,5 +92,7 @@
     </div>
 </div>
 
+<!-- After looping through a separate query, this function restores the $post global to the current post in the main query. -->
+<?php wp_reset_postdata(); ?>
 <!-- CALLING SIDEBAR BY ID - NOTE( HTML ID is a sidebar ID) -->
 <?php dynamic_sidebar('sidebar-1'); ?>
