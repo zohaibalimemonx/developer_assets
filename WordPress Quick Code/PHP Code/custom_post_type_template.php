@@ -15,7 +15,9 @@
 <!-- POST WITH CONDITIONS -->
 <?php  
     $datetime = new DateTime();
-    $today = $datetime->format('Y m d'); 
+    $today = $datetime->format('Y m d');
+    // OR
+    $today = date('Ymd');
     $mainarray = array(
         'post_type' => array('POST_TYPE_NAME'),
         'post_status' => array('publish'),
