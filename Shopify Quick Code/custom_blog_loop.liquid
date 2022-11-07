@@ -17,6 +17,13 @@
   {{ article.published_at | time_tag: format: 'date' }}
 {%- endif -%}
 
+// OR //
+
+<!-- Posted Date -->
+{%- if section.settings.show_date -%}
+{{ article.author }} | {{ article.published_at | date: '%B %d, %Y' }}
+{%- endif -%}
+
 <!-- Featured Image -->
 {%- if article.image -%}
 <a href="{{ article.url }}">
