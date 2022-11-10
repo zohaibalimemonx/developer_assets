@@ -449,3 +449,118 @@ add_action("woocommerce_created_customer", "woocom_save_extra_register_fields");
     });
 
 </script>
+
+
+<!-- MUST MAKE THE CODE NEAT & CLEAN -->
+
+add_action( 'woocommerce_edit_account_form', 'mc_add_account_details' );
+function mc_add_account_details() {
+	$user       = wp_get_current_user();
+    $user_roles = !empty( $user->roles ) ? $user->roles : [];
+    
+    if ( !in_array( 'customer', $user_roles ) ) {
+        return;
+    }
+	?>
+		<p class="woocommerce-form-row woocommerce-form-row--first form-row form-row-first">
+            <label for="personality"><?php esc_html_e( 'Personality', 'dokan' ); ?></label>
+            <input type="text" class="woocommerce-Input woocommerce-Input--text input-text" name="personality" id="personality" value="<?php echo esc_attr( $user->personality ); ?>" />
+        </p>
+		<p class="woocommerce-form-row woocommerce-form-row--last form-row form-row-last">
+            <label for="languages"><?php esc_html_e( 'Languages', 'dokan' ); ?></label>
+            <input type="text" class="woocommerce-Input woocommerce-Input--text input-text" name="languages" id="languages" value="<?php echo esc_attr( $user->languages ); ?>" />
+        </p>
+		<p class="woocommerce-form-row woocommerce-form-row--first form-row form-row-first">
+            <label for="religion"><?php esc_html_e( 'Religion', 'dokan' ); ?></label>
+            <input type="text" class="woocommerce-Input woocommerce-Input--text input-text" name="religion" id="religion" value="<?php echo esc_attr( $user->religion ); ?>" />
+        </p>
+		<p class="woocommerce-form-row woocommerce-form-row--last form-row form-row-last">
+            <label for="interests"><?php esc_html_e( 'Interests', 'dokan' ); ?></label>
+            <input type="text" class="woocommerce-Input woocommerce-Input--text input-text" name="interests" id="interests" value="<?php echo esc_attr( $user->interests ); ?>" />
+        </p>
+		<p class="woocommerce-form-row woocommerce-form-row--last form-row">
+            <label for="customer_bio"><?php esc_html_e( 'Biography', 'dokan' ); ?></label>
+			<textarea class="woocommerce-Input woocommerce-Input--text input-text" name="customer_bio" id="customer_bio"><?php echo esc_attr( $user->customer_bio ); ?></textarea>
+        </p>
+	<?php
+}
+
+
+// Save custom fields in account details form
+add_action( 'woocommerce_save_account_details', 'mc_save_account_details' );
+function mc_save_account_details( $user_id ) {
+	if ( isset( $_POST['personality'] ) ) {
+		update_user_meta( $user_id, 'personality', sanitize_text_field( $_POST['personality'] ) );
+	}
+	if ( isset( $_POST['languages'] ) ) {
+		update_user_meta( $user_id, 'languages', sanitize_text_field( $_POST['languages'] ) );
+	}
+	if ( isset( $_POST['religion'] ) ) {
+		update_user_meta( $user_id, 'religion', sanitize_text_field( $_POST['religion'] ) );
+	}
+	if ( isset( $_POST['interests'] ) ) {
+		update_user_meta( $user_id, 'interests', sanitize_text_field( $_POST['interests'] ) );
+	}
+	if ( isset( $_POST['customer_bio'] ) ) {
+		update_user_meta( $user_id, 'customer_bio', sanitize_text_field( $_POST['customer_bio'] ) );
+	}
+}
+
+
+// Show account details custom fields in user profile form
+add_action( 'show_user_profile', 'mc_show_extra_account_details', 15 );
+add_action( 'edit_user_profile', 'mc_show_extra_account_details', 15 );
+function mc_show_extra_account_details( $user ) {
+    $user_roles = !empty( $user->roles ) ? $user->roles : [];
+    
+    if ( !in_array( 'customer', $user_roles ) ) {
+        return;
+    }
+	?>
+	<h3><?php esc_html_e( 'Extra Account Details', 'dokan' ); ?></h3>
+	<table id="fieldset-extra" class="form-table">
+        <tr>
+            <th><label><?php esc_html_e( 'Personality', 'dokan' ); ?></label></th>
+            <td>
+                <input type="text" class="regular-text" name="personality" id="personality" value="<?php echo esc_attr( $user->personality ); ?>" />
+            </td>
+        </tr>
+        <tr>
+            <th><label><?php esc_html_e( 'Languages', 'dokan' ); ?></label></th>
+            <td>
+                <input type="text" class="regular-text" name="languages" id="languages" value="<?php echo esc_attr( $user->languages ); ?>" />
+            </td>
+        </tr>
+        <tr>
+            <th><label><?php esc_html_e( 'Religion', 'dokan' ); ?></label></th>
+            <td>
+                <input type="text" class="regular-text" name="religion" id="religion" value="<?php echo esc_attr( $user->religion ); ?>" />
+            </td>
+        </tr>
+        <tr>
+            <th><label><?php esc_html_e( 'Interests', 'dokan' ); ?></label></th>
+            <td>
+                <input type="text" class="regular-text" name="interests" id="interests" value="<?php echo esc_attr( $user->interests ); ?>" />
+            </td>
+        </tr>
+		<tr>
+            <th><label><?php esc_html_e( 'Biography', 'dokan' ); ?></label></th>
+            <td>
+				<textarea class="regular-text" name="customer_bio" id="customer_bio"><?php echo esc_attr( $user->customer_bio ); ?></textarea>
+            </td>
+        </tr>
+	</table>
+<?php
+}
+
+
+/**
+ * WooCommerce function for redirecting users on login based on user role
+ */
+add_filter( 'woocommerce_login_redirect', 'wc_login_redirect', 10, 2 );
+function wc_login_redirect( $url, $user ) {
+    if ( in_array( 'administrator', $user->roles ) ) {
+        $url = admin_url();
+    }
+    return $url;
+}
