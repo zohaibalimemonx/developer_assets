@@ -183,7 +183,7 @@ if( ! class_exists( 'Showcase_Taxonomy_Images' ) ) {
 
 		public function load_media() {
 		
-			if( ! isset( $_GET['taxonomy'] ) || $_GET['taxonomy'] != 'developer' || $_GET['taxonomy'] != 'development') {
+			if( $_GET['taxonomy'] != 'TAXONOMY-CATEGORY-SLUG') {
 				return;
 			}
 		

@@ -22,3 +22,24 @@
     {
 	    wp_mkdir_p( ABSPATH . 'wp-content/example_folder' );
     }
+
+/**
+ * WordPress function for redirecting users on login based on user role
+ */
+add_filter( 'login_redirect', 'zx_user_login_redirect', 10, 3 );
+function zx_user_login_redirect( $url, $request, $user ) 
+{
+    if ( $user && is_object( $user ) && is_a( $user, 'WP_User' ) ) 
+    {
+        if ( $user->has_cap( 'administrator' ) ) 
+        {
+            $url = admin_url();
+        }
+        else 
+        {
+            $url = get_permalink(952);
+        }
+    }
+    
+    return $url;
+}
