@@ -1,5 +1,8 @@
 <?php
 
+// REF: https://justintadlock.com/archives/2011/06/27/custom-columns-for-custom-post-types
+
+
 /* > > > Add Custom Column Into Custom Post Type < < < */
 
 add_filter( 'manage_POST_TYPE_NAME_HERE_posts_columns', 'coniferwellness_filter_posts_columns' );
